@@ -13,8 +13,6 @@ async function getMessageByIndex(req, res) {
 async function addNewMessage(req, res) {
   const messageAuthor = req.body.author;
   const messageText = req.body.message;
-  console.log(messageText);
-  console.log(messageAuthor);
   db.addNewMessage(messageAuthor, messageText).then(() => res.redirect("/"));
 }
 

@@ -7,7 +7,7 @@ const {
 
 const indexRouter = Router();
 
-indexRouter.post("/new", (req, res) => addNewMessage);
+indexRouter.post("/new", (req, res) => addNewMessage(req, res));
 
 indexRouter.get("/messages/:messageId", (req, res) => {
   getMessageByIndex(req, res);
