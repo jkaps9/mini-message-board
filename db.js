@@ -1,11 +1,26 @@
-const authors = [
-  { id: 1, name: "Bryan" },
-  { id: 2, name: "Christian" },
-  { id: 3, name: "Jason" },
+const messages = [
+  {
+    text: "Hi there!",
+    user: "Amando",
+    added: new Date(),
+  },
+  {
+    text: "Hello World!",
+    user: "Charles",
+    added: new Date(),
+  },
 ];
 
-async function getAuthorById(authorId) {
-  return authors.find((author) => author.id === authorId);
+async function getMessageByIndex(messageIndex) {
+  return messages[messageIndex];
 }
 
-module.exports = { getAuthorById };
+async function addNewMessage(messageAuthor, messageText) {
+  messages.push({ text: messageText, user: messageAuthor, added: new Date() });
+}
+
+async function getMessages() {
+  return messages;
+}
+
+module.exports = { getMessageByIndex, addNewMessage };
