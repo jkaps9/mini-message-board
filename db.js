@@ -17,10 +17,11 @@ async function getMessageByIndex(messageIndex) {
 
 async function addNewMessage(messageAuthor, messageText) {
   messages.push({ text: messageText, user: messageAuthor, added: new Date() });
+  return;
 }
 
 async function getMessages() {
-  return messages;
+  return [...messages];
 }
 
-module.exports = { getMessageByIndex, addNewMessage };
+module.exports = { getMessageByIndex, addNewMessage, getMessages };

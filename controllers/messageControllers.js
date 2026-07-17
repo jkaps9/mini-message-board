@@ -10,17 +10,18 @@ async function getMessageByIndex(req, res) {
   res.send(message);
 }
 
-function addNewMessage(req, res) {
+async function addNewMessage(req, res) {
   const messageAuthor = req.body.author;
   const messageText = req.body.message;
-  db.addNewMessage(messageAuthor, messageText);
-  res.redirect("/");
+  console.log(messageText);
+  console.log(messageAuthor);
+  db.addNewMessage(messageAuthor, messageText).then(() => res.redirect("/"));
 }
 
-async function getMessages(req, res) {
+async function getMessages() {
   const messages = await db.getMessages();
   console.log(messages);
-  res.send(messages);
+  return messages;
 }
 
-module.exports = { getMessageByIndex };
+module.exports = { getMessageByIndex, addNewMessage, getMessages };
