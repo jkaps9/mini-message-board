@@ -2,9 +2,7 @@ const db = require("../db");
 
 async function getMessageByIndex(req, res) {
   const { messageId } = req.params;
-  console.log(messageId);
   const message = await db.getMessageByIndex(Number(messageId));
-  console.log(message);
   if (!message) {
     res.send("message not found");
   }
