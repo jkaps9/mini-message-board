@@ -4,12 +4,12 @@
     <title>Homepage</title>
   </head>
   <body>
-    <%- include('navbar', {links: links}) %>
+
     <ul>
-        <% users.forEach((user) => { %>
-            <%- include('users/user', {user: user}); %>
+        <% messages.forEach((message) => { %>
+            <%- include('messages/message', {message: message}); %>
         <% }); %>
     </ul>
-    <%- include('footer') %>
+
   </body>
 </html>
