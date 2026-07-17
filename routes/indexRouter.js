@@ -19,4 +19,11 @@ indexRouter.get("/", (req, res) =>
   res.render("index", { title: "Mini Messageboard", messages: messages }),
 );
 
+indexRouter.post("/new", (req, res) => {
+  const messageAuthor = req.body.author;
+  const messageText = req.body.message;
+  messages.push({ text: messageText, user: messageUser, added: new Date() });
+  res.redirect("/");
+});
+
 module.exports = indexRouter;
