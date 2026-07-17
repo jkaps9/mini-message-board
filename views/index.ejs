@@ -6,8 +6,8 @@
   <body>
     <a href="/new">Create New Message</a>
     <ul class="message-list">
-        <% messages.forEach((message) => { %>
-            <%- include('messages/message', {message: message}); %>
+        <% messages.forEach((message, index) => { %>
+            <%- include('messages/message', {message: message, index: index}); %>
         <% }); %>
     </ul>
 
