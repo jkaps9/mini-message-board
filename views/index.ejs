@@ -4,6 +4,7 @@
     <title><%= title %></title>
   </head>
   <body>
+    <a href="/new">Create New Message</a>
     <ul class="message-list">
         <% messages.forEach((message) => { %>
             <%- include('messages/message', {message: message}); %>
