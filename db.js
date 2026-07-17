@@ -16,6 +16,7 @@ async function getMessageByIndex(messageIndex) {
 }
 
 async function addNewMessage(messageAuthor, messageText) {
+  console.log(messageText);
   messages.push({ text: messageText, user: messageAuthor, added: new Date() });
   return;
 }

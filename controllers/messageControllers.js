@@ -1,13 +1,15 @@
 const db = require("../db");
 
 async function getMessageByIndex(req, res) {
-  const { messageIndex } = req.params;
-  const message = await db.getMessageByIndex(Number(messageIndex));
-
+  const { messageId } = req.params;
+  console.log(messageId);
+  const message = await db.getMessageByIndex(Number(messageId));
+  console.log(message);
   if (!message) {
+    res.send("message not found");
   }
 
-  res.send(message);
+  res.render("messages/messageDetails", { message: message });
 }
 
 async function addNewMessage(req, res) {
@@ -20,7 +22,6 @@ async function addNewMessage(req, res) {
 
 async function getMessages() {
   const messages = await db.getMessages();
-  console.log(messages);
   return messages;
 }
 

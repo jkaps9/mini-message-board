@@ -7,15 +7,12 @@ const {
 
 const indexRouter = Router();
 
-indexRouter.get("/", (req, res) => {
-  getMessages().then((data) => res.render("index", { messages: data }));
-});
-
 indexRouter.post("/new", (req, res) => addNewMessage);
 
-indexRouter.get("/messages/:messageId", (req, res) => {
-  const { messageId } = req.params;
-  res.render("messages/messageDetails", getMessageByIndex);
+indexRouter.get("/messages/:messageId", (req, res) => getMessageByIndex);
+
+indexRouter.get("/", (req, res) => {
+  getMessages().then((data) => res.render("index", { messages: data }));
 });
 
 module.exports = indexRouter;
