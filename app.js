@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const authorRouter = require("./routes/authorRouter");
+const newMessageRouter = require("./routes/newMessageRouter");
 
 const indexRouter = require("./routes/indexRouter");
 const path = require("node:path");
@@ -11,7 +11,7 @@ app.set("view engine", "ejs");
 
 app.use(express.static(assetsPath));
 
-app.use("/authors", authorRouter);
+app.use("/new", newMessageRouter);
 app.use("/", indexRouter);
 
 app.use((err, req, res, next) => {

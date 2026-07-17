@@ -1,5 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+
 ul {
   list-style-type: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-block-start: 0;
 }
 
 .message-list {
@@ -10,4 +23,30 @@ ul {
 
 .message-list__message {
   border: 1px solid black;
+}
+
+form {
+  background-color: rgba(245, 245, 245);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  min-width: 33vw;
+  padding: 1rem 2rem;
+  width: fit-content;
+
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    button {
+      align-self: flex-end;
+    }
+  }
+}
+
+.input-group {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
 }
