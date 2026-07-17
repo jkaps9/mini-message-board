@@ -22,7 +22,15 @@ h6 {
 }
 
 .message-list__message {
+  align-items: flex-start;
   border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+
+  padding: 1rem 2rem;
+  p {
+    margin: 0;
+  }
 }
 
 form {
