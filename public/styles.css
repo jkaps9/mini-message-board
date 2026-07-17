@@ -1,3 +1,13 @@
-body {
-  color: red;
+ul {
+  list-style-type: none;
+}
+
+.message-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.message-list__message {
+  border: 1px solid black;
 }

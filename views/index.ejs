@@ -1,11 +1,10 @@
 <html>
   <head>
     <link rel="stylesheet" href="/styles.css">
-    <title>Homepage</title>
+    <title><%= title %></title>
   </head>
   <body>
-
-    <ul>
+    <ul class="message-list">
         <% messages.forEach((message) => { %>
             <%- include('messages/message', {message: message}); %>
         <% }); %>
